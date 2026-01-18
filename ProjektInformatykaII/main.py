@@ -27,8 +27,7 @@ class Zbiornik:
     def add(self, amount, temp):
         if amount <= 0:
             return
-        self.temperature = (
-            (self.temperature * self.volume + temp * amount) / (self.volume + amount))
+        self.temperature = ((self.temperature * self.volume + temp * amount) / (self.volume + amount))
         self.volume = min(self.max_volume, self.volume + amount)
 
     def remove(self, amount):
