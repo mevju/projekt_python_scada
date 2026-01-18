@@ -1,5 +1,5 @@
 Projekt: Symulacja układu podgrzewania i chłodzenia (SCADA)
-Autor: Mateusz Smyk
+Autor: Mateusz Smyk 203999
 
 1. OPIS PROJEKTU
 Program jest graficzną symulacją układu podgrzewania i chłodzenia
@@ -14,8 +14,9 @@ Aplikacja działa w stylu systemu SCADA i przedstawia:
 - wykres temperatury w czasie,
 - panel sterowania dla użytkownika.
 
-2. STRUKTURA PROGRAMU
+  Celem jest utrzymanie zadanej temperatury w zbiorniku 3 znajdujacym sie na zewnatrz w temperaturze otoczenia 19 stopni. Temperatura wody w srodku waha +- 3 stopnie w celu przejrzystego zobrazowania działania systemu, w przypadku ustawienia sztywnego np. 50 stopni nie było by widać jak działa system, a tak jest to lepiej zobrazowane.
 
+2. STRUKTURA PROGRAMU
 
 Program składa się z trzech głównych klas:
 
@@ -52,6 +53,7 @@ Zbiornik 2 (Z2 – Bufor)
 
 Zbiornik 3 (Z3)
 - główny zbiornik odbiorczy
+- dziala na niego temperatura otoczenia dlatego temperatura spada po nagrzaniu
 - regulowana temperatura
 - maksymalne wizualne napełnienie: 75%
 
