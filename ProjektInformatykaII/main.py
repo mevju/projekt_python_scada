@@ -567,16 +567,7 @@ class SCADA(QWidget):
         self.draw_panel(p)
         self.draw_podzial(p)
 
-        for r in [
-            self.r_main_top,
-            self.r_main_bottom,
-            self.r_main_to_z1,
-            self.r_main_to_z4,
-            self.r1,
-            self.r2,
-            self.r3,
-            self.r_out
-        ]:
+        for r in [self.r_main_top, self.r_main_bottom, self.r_main_to_z1, self.r_main_to_z4, self.r1, self.r2, self.r3, self.r_out]:
             r.draw(p)
 
         for z in [self.z1, self.z2, self.z3, self.z4]:
