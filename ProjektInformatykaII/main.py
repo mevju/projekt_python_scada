@@ -35,7 +35,7 @@ class Zbiornik:
         self.volume -= taken
         return taken
 
-    def draw(self, p):
+    def draw(self, p, t_otoczenia=None):
         #ciecz
         if self.volume > 0:
             h = int(self.h * self.level())
@@ -56,6 +56,10 @@ class Zbiornik:
         #opis
         p.drawText(self.x, self.y - 20, self.name)
         p.drawText(self.x, self.y + self.h + 15, f"{int(self.temperature)} °C")
+
+        if t_otoczenia is not None:
+            p.setPen(QColor(180, 180, 180))
+            p.drawText(self.x - 50, self.y - 80, f"Temperatura otoczenia: {int(t_otoczenia)} °C")
 
 class Rura:
     grubosc = 12
@@ -569,8 +573,10 @@ class SCADA(QWidget):
         for r in [self.r_main_top, self.r_main_bottom, self.r_main_to_z1, self.r_main_to_z4, self.r1, self.r2, self.r3, self.r_out]:
             r.draw(p)
 
-        for z in [self.z1, self.z2, self.z3, self.z4]:
-            z.draw(p)
+        self.z1.draw(p)
+        self.z2.draw(p)
+        self.z3.draw(p, self.T_otoczenia) #przekazana temperatura otoczenia
+        self.z4.draw(p)
 
         self.draw_wegiel(p)
         self.draw_fan(p)
